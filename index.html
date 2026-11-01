@@ -4,67 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>บริการน้องอิคคิว - ชตินนท์ จากรัมย์</title>
+    <!-- โหลด Font Awesome สำหรับแสดงไอคอน -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Tahoma', sans-serif;
+            font-family: 'Kanit', 'Segoe UI', Tahoma, sans-serif;
         }
+        
         body {
-            background-color: #f4f6f9;
+            background-color: #f0f2f5;
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
+        /* Header */
         header {
-            background-color: #1a73e8;
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Nav Menu (แถบหน้าแรก) */
         nav {
-            background-color: #1557b0;
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 12px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
             justify-content: center;
-            gap: 20px;
         }
-        nav a {
+
+        .nav-btn {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #e8f0fe;
+        }
+
+        /* Main Content Body */
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 90%;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .welcome-card {
+            background: white;
+            width: 100%;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* ปุ่มเมนูด้านล่างพร้อมไอคอน */
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #28a745, #1e7e34);
             color: white;
             text-decoration: none;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background 0.3s;
+            padding: 16px 32px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
         }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
+
+        .action-button i {
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            text-align: center;
             padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        footer strong {
+            color: #f8fafc;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <h1>บริการน้องอิคคิว</h1>
         <p>ชตินนท์ จากรัมย์</p>
     </header>
 
+    <!-- เมนูหน้าแรก -->
     <nav>
-        <a href="#">หน้าแรก</a>
-        <a href="promotional_code/index.html" target="_blank">บันทึกรหัสประชาสัมพันธ์</a>
+        <a href="index.html" class="nav-btn">
+            <i class="fa-solid fa-house"></i> หน้าแรก
+        </a>
     </nav>
 
-    <div class="container">
-        <h2>ยินดีต้อนรับสู่ระบบบริการ</h2>
-        <p>เลือกเมนูด้านบนเพื่อทำรายการบันทึกรหัสประชาสัมพันธ์ในแท็บใหม่</p>
-    </div>
+    <!-- เนื้อหาหลัก -->
+    <main>
+        <div class="welcome-card">
+            <h2>ยินดีต้อนรับสู่ระบบบริการ</h2>
+            <p style="margin-top: 10px; color: #666;">กดปุ่มด้านล่างเพื่อทำรายการบันทึกรหัสประชาสัมพันธ์ (ระบบจะเปิดในแท็บใหม่)</p>
+        </div>
+
+        <!-- ปุ่มเข้าสู่ระบบบันทึกรหัสประชาสัมพันธ์ -->
+        <a href="promotional_code/index.html" target="_blank" class="action-button">
+            <i class="fa-solid fa-pen-to-square"></i>
+            ระบบบันทึกรหัสประชาสัมพันธ์
+        </a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>บริการน้องอิคคิว - ชตินนท์ จากรัมย์</strong>. สงวนลิขสิทธิ์ทั้งหมด.</p>
+    </footer>
 
 </body>
 </html>
