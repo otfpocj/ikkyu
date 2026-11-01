@@ -1,1 +1,39 @@
-รอ...
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกรหัสประชาสัมพันธ์</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        #app-frame-container {
+            width: 100%;
+            height: 100vh;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-frame-container"></div>
+
+    <script>
+        const encodedUrl = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbQ==";
+        const decodedUrl = atob(encodedUrl);
+        const container = document.getElementById('app-frame-container');
+        const iframe = document.createElement('iframe');
+        iframe.src = decodedUrl;
+        iframe.allow = "geolocation; microphone; camera";
+        container.appendChild(iframe);
+    </script>
+</body>
+</html>
