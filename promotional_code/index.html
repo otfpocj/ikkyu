@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>บันทึกรหัสประชาสัมพันธ์</title>
+    <script>
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+            alert("กรุณาเข้าสู่ระบบก่อนใช้งานระบบนี้ครับ");
+            window.location.href = "../index.html";
+        }
+    </script>
     <style>
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
+            background-color: #ffffff;
         }
         #app-frame-container {
             width: 100%;
@@ -27,12 +34,16 @@
     <div id="app-frame-container"></div>
 
     <script>
-        const encodedUrl = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbQ==";
+
+        const encodedUrl = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFg=";
+
         const decodedUrl = atob(encodedUrl);
+
         const container = document.getElementById('app-frame-container');
         const iframe = document.createElement('iframe');
         iframe.src = decodedUrl;
         iframe.allow = "geolocation; microphone; camera";
+        
         container.appendChild(iframe);
     </script>
 </body>
