@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>บันทึกรหัสประชาสัมพันธ์</title>
     <script>
+        // ตรวจสอบสถานะการเข้าสู่ระบบ
         if (sessionStorage.getItem("isLoggedIn") !== "true") {
             alert("กรุณาเข้าสู่ระบบก่อนใช้งานระบบนี้ครับ");
-            window.location.href = "./index.html";
+            // พาดีดกลับไปที่หน้าแรกของเว็บคุณโดยตรง ป้องกันลิงก์พัง
+            window.location.href = "/ikkyu/index.html"; 
         }
     </script>
     <style>
@@ -34,8 +36,8 @@
     <div id="app-frame-container"></div>
 
     <script>
-
-        const encodedUrl = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFg=";
+    
+        const encodedUrl = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFg="; // <-- ใส่รหัส Base64 ของคุณตรงนี้
 
         const decodedUrl = atob(encodedUrl);
 
