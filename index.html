@@ -3,161 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บริการน้องอิคคิว - ชตินนท์ จากรัมย์</title>
-    <!-- โหลด Font Awesome สำหรับแสดงไอคอน -->
+    <title>เข้าสู่ระบบ - บริการน้องอิคคิว</title>
+    <!-- AdminLTE & FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Kanit', 'Segoe UI', Tahoma, sans-serif;
-        }
-        
-        body {
-            background-color: #f0f2f5;
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Nav Menu (แถบหน้าแรก) */
-        nav {
-            background-color: #ffffff;
-            padding: 12px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: center;
-        }
-
-        .nav-btn {
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-btn:hover {
-            background-color: #e8f0fe;
-        }
-
-        /* Main Content Body */
-        main {
-            flex: 1;
-            max-width: 800px;
-            width: 90%;
-            margin: 40px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .welcome-card {
-            background: white;
-            width: 100%;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        /* ปุ่มเมนูด้านล่างพร้อมไอคอน */
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #28a745, #1e7e34);
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 16px 32px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .action-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-        }
-
-        .action-button i {
-            font-size: 1.4rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1e293b;
-            color: #94a3b8;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            margin-top: auto;
-        }
-
-        footer strong {
-            color: #f8fafc;
-        }
-    </style>
 </head>
-<body>
+<body class="hold-transition login-page" style="background-color: #e9ecef;">
+<div class="login-box">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <h1 class="h3"><b>บริการน้องอิคคิว</b></h1>
+      <small>ชตินนท์ จากรัมย์</small>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">กรุณาเข้าสู่ระบบเพื่อใช้งาน Dashboard</p>
 
-    <!-- Header -->
-    <header>
-        <h1>บริการน้องอิคคิว</h1>
-        <p>ชตินนท์ จากรัมย์</p>
-    </header>
+      <form id="loginForm">
+        <div class="input-group mb-3">
+          <input type="text" id="username" class="form-control" placeholder="ชื่อผู้ใช้งาน" required>
+          <div class="input-group-append">
+            <div class="input-group-text"><span class="fas fa-user"></span></div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" id="password" class="form-control" placeholder="รหัสผ่าน" required>
+          <div class="input-group-append">
+            <div class="input-group-text"><span class="fas fa-lock"></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button type="submit" id="btnSubmit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-    <!-- เมนูหน้าแรก -->
-    <nav>
-        <a href="index.html" class="nav-btn">
-            <i class="fa-solid fa-house"></i> หน้าแรก
-        </a>
-    </nav>
+<script>
+    const encodedGasUrl = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4NEFsYTVMU1JKNWF3SFd6eWRpM0NrMENDRnlhdTNrX0NkeHpSMFpvSDMwcE9sLUxCelAyZm8yUG9yOWpqUlBodzMvZXhlYw=="; 
 
-    <!-- เนื้อหาหลัก -->
-    <main>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('btnSubmit');
+        btn.disabled = true;
+        btn.innerText = "กำลังตรวจสอบ...";
 
-        <!-- ปุ่มเข้าสู่ระบบบันทึกรหัสประชาสัมพันธ์ -->
-        <a href="promotional_code/index.html" target="_blank" class="action-button">
-            <i class="fa-solid fa-pen-to-square"></i>
-            ระบบบันทึกรหัสประชาสัมพันธ์
-        </a>
-    </main>
+        const payload = {
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value
+        };
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 <strong>บริการน้องอิคคิว - ชตินนท์ จากรัมย์</strong>. สงวนลิขสิทธิ์ทั้งหมด.</p>
-    </footer>
+        try {
+            // ถอดรหัส URL แบบไดนามิกเพื่อเรียกใช้งาน API
+            const gasUrl = atob(encodedGasUrl);
+            
+            const res = await fetch(gasUrl, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            });
+            const result = await res.json();
 
+            if(result.status === "success") {
+                sessionStorage.setItem("isLoggedIn", "true");
+                sessionStorage.setItem("fullname", result.fullname);
+                window.location.href = "dashboard.html";
+            } else {
+                alert(result.message);
+                btn.disabled = false;
+                btn.innerText = "เข้าสู่ระบบ";
+            }
+        } catch(err) {
+            alert("เกิดข้อผิดพลาดในการเชื่อมต่อระบบ");
+            btn.disabled = false;
+            btn.innerText = "เข้าสู่ระบบ";
+        }
+    });
+</script>
 </body>
 </html>
