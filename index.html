@@ -2,10 +2,69 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>เว็บของฉัน</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริการน้องอิคคิว - ชตินนท์ จากรัมย์</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #1557b0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>ยินดีต้อนรับสู่เว็บ GitHub Pages ของฉัน!</h1>
-    <p>นี่คือหน้าเว็บแรกที่เปิดใช้งานเรียบร้อยแล้ว</p>
+
+    <header>
+        <h1>บริการน้องอิคคิว</h1>
+        <p>ชตินนท์ จากรัมย์</p>
+    </header>
+
+    <nav>
+        <a href="#">หน้าแรก</a>
+        <a href="promotional_code/index.html" target="_blank">บันทึกรหัสประชาสัมพันธ์</a>
+    </nav>
+
+    <div class="container">
+        <h2>ยินดีต้อนรับสู่ระบบบริการ</h2>
+        <p>เลือกเมนูด้านบนเพื่อทำรายการบันทึกรหัสประชาสัมพันธ์ในแท็บใหม่</p>
+    </div>
+
 </body>
 </html>
